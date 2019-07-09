@@ -8,10 +8,12 @@ pipelines:
       - name: run
         type: Bash
         configuration:
+          nodePool: ubuntu16
           environmentVariables:
             foo: bar
             fizz: bin
         execution:
           # onStart: do
           onExecute:
+            - printenv
             - echo foo is $foo and fizz is $fizz
