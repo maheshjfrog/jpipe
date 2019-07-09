@@ -8,7 +8,6 @@ pipelines:
       - name: run
         type: Bash
         configuration:
-          nodePool: ubuntu16
           environmentVariables:
             foo: bar
             fizz: bin
