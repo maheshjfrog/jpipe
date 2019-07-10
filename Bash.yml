@@ -19,6 +19,7 @@ pipelines:
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
             - echo check is $check
+            - add_run_variables firststg=1,2
       - name: firststg1
         type: Bash
         configuration:
@@ -29,8 +30,10 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
+            - if [[ $firststg == *1* ]];then 
             - echo pipe is $pipe
             - echo check is $check
+            - fi
       - name: firststg2
         type: Bash
         configuration:
@@ -39,7 +42,9 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
+            - if [[ $firststg == *2* ]];then 
             - echo pipe is $pipe
+            - fi
       - name: firststg3
         type: Bash
         configuration:
@@ -48,4 +53,6 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
+            - if [[ $firststg == *3* ]];then 
             - echo pipe is $pipe
+            - fi
