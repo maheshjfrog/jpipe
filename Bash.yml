@@ -30,7 +30,7 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
-            - if [[ $firststg !~ "1" ]] then exit  
+            - echo first stage: $firststg
             - echo pipe is $pipe
             - echo check is $check
       - name: firststg2
@@ -41,7 +41,7 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
-            - if [[ $firststg !~ "2" ]] then exit 
+            - echo first stage: $firststg
             - echo pipe is $pipe
       - name: firststg3
         type: Bash
@@ -51,5 +51,5 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
-            - if [[ $firststg !~ "3" ]] then exit
+            - echo first stage: $firststg
             - echo pipe is $pipe
