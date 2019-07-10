@@ -2,7 +2,8 @@ pipelines:
   - name: TestBash
     configuration:
       environmentVariables:
-        pipe: yes
+        readOnly:
+          pipe: yes
     steps:
       - name: run1
         type: Bash
