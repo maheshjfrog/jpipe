@@ -28,7 +28,6 @@ pipelines:
           inputSteps:
             - name: run1
         execution:
-          # onStart: do
           onExecute:
             - echo first stage: $firststg
             - echo pipe is $pipe
@@ -39,9 +38,7 @@ pipelines:
           inputSteps:
             - name: run1
         execution:
-          # onStart: do
           onExecute:
-            - echo first stage: $firststg
             - echo pipe is $pipe
       - name: firststg3
         type: Bash
@@ -49,7 +46,5 @@ pipelines:
           inputSteps:
             - name: run1
         execution:
-          # onStart: do
           onExecute:
-            - echo first stage: $firststg
             - echo pipe is $pipe
