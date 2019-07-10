@@ -17,17 +17,30 @@ pipelines:
             - printenv
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
-      - name: run2
+      - name: firststg1
         type: Bash
         configuration:
           inputSteps:
             - name: run1
-          environmentVariables:
-            foo: bar
-            fizz: bin
         execution:
           # onStart: do
           onExecute:
-            - printenv
-            - echo foo is $foo and fizz is $fizz
+            - echo pipe is $pipe
+      - name: firststg2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: run1
+        execution:
+          # onStart: do
+          onExecute:
+            - echo pipe is $pipe
+      - name: firststg3
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: run1
+        execution:
+          # onStart: do
+          onExecute:
             - echo pipe is $pipe
