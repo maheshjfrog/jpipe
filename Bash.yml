@@ -39,7 +39,7 @@ pipelines:
             - name: run1
         execution:
           onExecute:
-            - if [[ ! "$firststg" !~ "2" ]]; then echo need to skip; exit; fi
+            - if [[ ! "$firststg" =~ "2" ]]; then echo need to skip; exit; fi
             - echo pipe is $pipe
       - name: firststg3
         type: Bash
@@ -48,5 +48,5 @@ pipelines:
             - name: run1
         execution:
           onExecute:
-            - if [[ ! "$firststg" !~ "3" ]]; then echo need to skip; exit; fi
+            - if [[ ! "$firststg" =~ "3" ]]; then echo need to skip; exit; fi
             - echo pipe is $pipe
