@@ -2,10 +2,9 @@ pipelines:
   - name: TestBash
     configuration:
       environmentVariables:
-        readOnly:
-          pipe: yes
+        pipe: yes
     steps:
-      - name: run
+      - name: run1
         type: Bash
         configuration:
           environmentVariables:
@@ -16,3 +15,18 @@ pipelines:
           onExecute:
             - printenv
             - echo foo is $foo and fizz is $fizz
+            - echo pipe is $pipe
+            - export pipe=no
+            - echo pipe is $pipe
+      - name: run2
+        type: Bash
+        configuration:
+          environmentVariables:
+            foo: bar
+            fizz: bin
+        execution:
+          # onStart: do
+          onExecute:
+            - printenv
+            - echo foo is $foo and fizz is $fizz
+            - echo pipe is $pipe
