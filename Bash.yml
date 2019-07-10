@@ -39,7 +39,7 @@ pipelines:
             - name: run1
         execution:
           onExecute:
-            - if [ $firststg -ne 2 ] then echo need to skip
+            - if [ $firststg -ne 2 ]; then echo need to skip; fi
             - echo pipe is $pipe
       - name: firststg3
         type: Bash
@@ -48,5 +48,5 @@ pipelines:
             - name: run1
         execution:
           onExecute:
-            - if [ $firststg -ne 3 ] then echo need to skip
+            - if [ $firststg -ne 3 ]; then echo need to skip; fi
             - echo pipe is $pipe
