@@ -18,6 +18,7 @@ pipelines:
             - printenv
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
+            - echo check is $check
       - name: firststg1
         type: Bash
         configuration:
@@ -27,6 +28,7 @@ pipelines:
           # onStart: do
           onExecute:
             - echo pipe is $pipe
+            - echo check is $check
       - name: firststg2
         type: Bash
         configuration:
