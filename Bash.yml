@@ -30,7 +30,7 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
-            - if [[ $firststg == *1* ]];then 
+            - if [[ $firststg =~ "1" ]];then 
             - echo pipe is $pipe
             - echo check is $check
             - fi
@@ -42,7 +42,7 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
-            - if [[ $firststg == *2* ]];then 
+            - if [[ $firststg =~ "2" ]];then 
             - echo pipe is $pipe
             - fi
       - name: firststg3
@@ -53,6 +53,6 @@ pipelines:
         execution:
           # onStart: do
           onExecute:
-            - if [[ $firststg == *3* ]];then 
+            - if [[ $firststg =~ "3" ]];then 
             - echo pipe is $pipe
             - fi
