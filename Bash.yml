@@ -29,7 +29,7 @@ pipelines:
             - name: run1
         execution:
           onExecute:
-            - echo first stage: $firststg
+            - echo first stage $firststg
             - echo pipe is $pipe
             - echo check is $check
       - name: firststg2
