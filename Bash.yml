@@ -22,6 +22,8 @@ pipelines:
       - name: run2
         type: Bash
         configuration:
+          inputSteps:
+            - name: run1
           environmentVariables:
             foo: bar
             fizz: bin
