@@ -22,6 +22,8 @@ pipelines:
       - name: firststg1
         type: Bash
         configuration:
+          environmentVariables:
+            check: true
           inputSteps:
             - name: run1
         execution:
