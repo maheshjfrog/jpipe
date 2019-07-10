@@ -19,7 +19,7 @@ pipelines:
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
             - echo check is $check
-            - add_run_variables firststg=1,2
+            - add_run_variables firststg=1
       - name: firststg1
         type: Bash
         configuration:
@@ -39,6 +39,7 @@ pipelines:
             - name: run1
         execution:
           onExecute:
+            - if [ $firststg -ne 2 ] then exit
             - echo pipe is $pipe
       - name: firststg3
         type: Bash
@@ -47,4 +48,5 @@ pipelines:
             - name: run1
         execution:
           onExecute:
+            - if [ $firststg -ne 3 ] then exit
             - echo pipe is $pipe
