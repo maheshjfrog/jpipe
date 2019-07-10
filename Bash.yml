@@ -19,7 +19,7 @@ pipelines:
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
             - echo check is $check
-            - add_run_variables firststg=1
+            - add_run_variables firststg=1,2
       - name: firststg1
         type: Bash
         configuration:
@@ -30,6 +30,7 @@ pipelines:
         execution:
           onExecute:
             - echo first stage $firststg
+            - if [[ ! "$firststg" =~ "1" ]]; then echo need to skip; exit; fi
             - echo pipe is $pipe
             - echo check is $check
       - name: firststg2
