@@ -4,7 +4,7 @@ pipelines:
       environmentVariables:
         readOnly:
           pipe: yes
-        check: true
+        check: 'true'
     steps:
       - name: run1
         type: Bash
@@ -23,7 +23,7 @@ pipelines:
         type: Bash
         configuration:
           environmentVariables:
-            check: true
+            check: 'true'
           inputSteps:
             - name: run1
         execution:
