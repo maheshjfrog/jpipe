@@ -26,7 +26,6 @@ pipelines:
           onExecute:
             - echo res_path is $res_c3isetup_resourcePath
             - ls $res_c3isetup_resourcePath
-            - kubectl version
             - gcloud version
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
