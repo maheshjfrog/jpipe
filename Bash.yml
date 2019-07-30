@@ -1,5 +1,5 @@
 resources:
-  - name: c3i-setup
+  - name: c3isetup
     type: GitRepo
     configuration:
       gitProvider: maheshg_github
@@ -20,7 +20,7 @@ pipelines:
             foo: bar
             fizz: bin
           inputResources:
-            - name: c3i-setup
+            - name: c3isetup
         execution:
           # onStart: do
           onExecute:
