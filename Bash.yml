@@ -2,7 +2,7 @@ resources:
   - name: c3i-setup
     type: GitRepo
     configuration:
-      gitProvider: github
+      gitProvider: maheshg_github
       path: conan-io/c3i-setup
 
 pipelines:
