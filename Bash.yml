@@ -21,16 +21,19 @@ pipelines:
             fizz: bin
           inputResources:
             - name: c3isetup
+          integrations:
+            - name: c3i_dev_kube
         execution:
           # onStart: do
           onExecute:
             - echo res_path is $res_c3isetup_resourcePath
+            - echo int_key is $int_c3i_dev_kube_json_key
             - cd $res_c3isetup_resourcePath
             - ls
             - pwd
             - gcloud version
+            - gcloud auth activate-service-account --key-file=$int_c3i_dev_kube_json_key
             - gcloud config set project cpe-c3i-dev
-            - gcloud auth activate-service-account --key-file=int_c3i_dev_kube_json_key
             - gcloud container clusters get-credentials conan-dev --zone us-west1-a --project cpe-c3i-dev
             - kubectl version
             - kubectl get pods -n conan
