@@ -32,8 +32,6 @@ pipelines:
             - ls
             - pwd
             - gcloud version
-            - gcloud auth activate-service-account --key-file=$int_c3i_dev_kube_json_key
-            - gcloud config set project cpe-c3i-dev
             - gcloud container clusters get-credentials conan-dev --zone us-west1-a --project cpe-c3i-dev
             - kubectl version
             - kubectl get pods -n conan
