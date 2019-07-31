@@ -1,16 +1,9 @@
 resources:
-  - name: c3i_setup
+  - name: c3isetuprepo
     type: GitRepo
     configuration:
       gitProvider: maheshg_github
       path: conan-io/c3i-setup
-  - name: dh_image
-    type: Image
-    configuration:
-      registry: rimas_dockerhub
-      imageName: busybox
-      imageTag: latest
-      autoPull: true
 
 pipelines:
   - name: TestKube
@@ -28,13 +21,13 @@ pipelines:
             fizz: bin
             DESIRED_VERSION: v2.14.3
           inputResources:
-            - name: c3i_setup
+            - name: c3isetuprepo
           integrations:
             - name: c3i_dev_kube
         execution:
           # onStart: do
           onExecute:
-            - cd $res_c3i_setup_resourcePath
+            - cd $res_c3isetuprepo_resourcePath
             - ls
             - pwd
             - gcloud version
