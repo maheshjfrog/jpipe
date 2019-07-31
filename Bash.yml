@@ -31,7 +31,6 @@ pipelines:
             - pwd
             - gcloud version
             - gcloud container clusters get-credentials conan-dev --zone us-west1-a --project cpe-c3i-dev
-            - kubectl cluster-info
             - kubectl get pods -n conan
             - echo foo is $foo and fizz is $fizz
             - echo pipe is $pipe
