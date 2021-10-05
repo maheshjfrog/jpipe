@@ -8,4 +8,4 @@ pipelines:
             - echo "Testing"
           onExecute:
             - echo "msbuild"
-            - vssetup
+            - dotnet -h
