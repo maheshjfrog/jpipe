@@ -1,0 +1,17 @@
+pipelines:
+  - name: pipeline_win_teset
+    steps:
+      - name: power_build
+        type: PowerShell
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: mcr.microsoft.com/dotnet/framework/sdk
+                tag: latest
+        execution:
+          onStart:
+            - echo "Testing"
+          onExecute:
+            - echo "msbuild"
