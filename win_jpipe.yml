@@ -3,14 +3,6 @@ pipelines:
     steps:
       - name: power_build
         type: PowerShell
-        configuration:
-          runtime:
-            type: image
-            image:
-              custom:
-                name: mcr.microsoft.com/dotnet/framework/sdk
-                tag: latest
-                options: --entrypoint=""
         execution:
           onStart:
             - echo "Testing"
